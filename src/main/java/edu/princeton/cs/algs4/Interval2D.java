@@ -61,6 +61,15 @@ public class Interval2D {
         return x.contains(p.x())  && y.contains(p.y());
     }
 
+    public boolean contains(Interval2D that) {
+        if (! x.contains(that.x.min())) return false;
+        if (! x.contains(that.x.max())) return false;
+        if (! y.contains(that.y.min())) return false;
+        if (! y.contains(that.y.max())) return false;
+
+        return true;
+    }
+
     /**
      * Returns the area of this two-dimensional interval.
      * @return the area of this two-dimensional interval
